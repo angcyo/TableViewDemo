@@ -107,6 +107,16 @@ extension DetalViewController: UITextFieldDelegate {
 
 	func textFieldDidEndEditing(textField: UITextField) {
 		print("\(#function)")
+
+		let text = textField.text ?? ""
+		if !text.isEmpty {
+			navigationItem.title = text
+
+			if let titleView = navigationItem.titleView as? UILabel {
+				titleView.text = text
+				titleView.sizeToFit()
+			}
+		}
 	}
 
 	func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
