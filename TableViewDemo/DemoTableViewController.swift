@@ -22,6 +22,8 @@ class DemoTableViewController: UITableViewController {
 		tableView.indicatorStyle = .Black // 滚动条的样式(黑色/白色)
 
 		// tableView.allowsSelection = false // 不允许选中
+
+		navigationItem.leftBarButtonItem = editButtonItem()
 	}
 
 	// MARK: table 中有多少个分组
@@ -68,6 +70,22 @@ class DemoTableViewController: UITableViewController {
 			}
 
 		}
+	}
+
+	// MARK:编辑模式下的删除回调
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == .Delete {
+			// 删除
+			datas.removeAtIndex(indexPath.row)
+			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+		} else if editingStyle == .Insert {
+			// 插入
+		}
+	}
+
+	// MARK: 指定的行,是否可以编辑
+	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		return indexPath.row > 2
 	}
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
