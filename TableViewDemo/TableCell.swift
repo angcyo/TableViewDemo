@@ -11,4 +11,9 @@ import UIKit
 //MARK: 表格的每一行
 class TableCell: UITableViewCell {
 
+	@IBOutlet weak var photoImageView: UIImageView!
+
+	@IBOutlet weak var nameLabel: UILabel!
+
+	@IBOutlet weak var rateView: RateView!
 }

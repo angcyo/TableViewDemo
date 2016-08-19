@@ -13,9 +13,10 @@
 		25BED5FD1D65FB3100D06F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25BED5FC1D65FB3100D06F83 /* Assets.xcassets */; };
 		25BED6001D65FB3100D06F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BED5FE1D65FB3100D06F83 /* LaunchScreen.storyboard */; };
 		25BED6081D66020900D06F83 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED6071D66020900D06F83 /* TableCell.swift */; };
-		25BED60A1D6602C300D06F83 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED6091D6602C300D06F83 /* DemoTableViewCell.swift */; };
 		25BED60C1D66093D00D06F83 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED60B1D66093D00D06F83 /* RateView.swift */; };
 		25BED60E1D66126900D06F83 /* RateTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED60D1D66126900D06F83 /* RateTestViewController.swift */; };
+		25BED6101D6677DA00D06F83 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED60F1D6677DA00D06F83 /* DemoTableViewController.swift */; };
+		25BED6121D6677F500D06F83 /* DataBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED6111D6677F500D06F83 /* DataBean.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,10 @@
 		25BED5FF1D65FB3100D06F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25BED6011D65FB3100D06F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25BED6071D66020900D06F83 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
-		25BED6091D6602C300D06F83 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		25BED60B1D66093D00D06F83 /* RateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		25BED60D1D66126900D06F83 /* RateTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTestViewController.swift; sourceTree = "<group>"; };
+		25BED60F1D6677DA00D06F83 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		25BED6111D6677F500D06F83 /* DataBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBean.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +68,9 @@
 				25BED5F71D65FB3100D06F83 /* ViewController.swift */,
 				25BED6071D66020900D06F83 /* TableCell.swift */,
 				25BED60B1D66093D00D06F83 /* RateView.swift */,
-				25BED6091D6602C300D06F83 /* DemoTableViewCell.swift */,
 				25BED5F91D65FB3100D06F83 /* Main.storyboard */,
+				25BED60F1D6677DA00D06F83 /* DemoTableViewController.swift */,
+				25BED6111D6677F500D06F83 /* DataBean.swift */,
 				25BED60D1D66126900D06F83 /* RateTestViewController.swift */,
 				25BED5FC1D65FB3100D06F83 /* Assets.xcassets */,
 				25BED5FE1D65FB3100D06F83 /* LaunchScreen.storyboard */,
@@ -149,11 +152,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				25BED6081D66020900D06F83 /* TableCell.swift in Sources */,
+				25BED6121D6677F500D06F83 /* DataBean.swift in Sources */,
 				25BED60C1D66093D00D06F83 /* RateView.swift in Sources */,
 				25BED60E1D66126900D06F83 /* RateTestViewController.swift in Sources */,
 				25BED5F81D65FB3100D06F83 /* ViewController.swift in Sources */,
-				25BED60A1D6602C300D06F83 /* DemoTableViewCell.swift in Sources */,
 				25BED5F61D65FB3100D06F83 /* AppDelegate.swift in Sources */,
+				25BED6101D6677DA00D06F83 /* DemoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +307,7 @@
 				25BED6061D65FB3100D06F83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

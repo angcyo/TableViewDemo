@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pQW-ot-TJp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ar-Qt-mh1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,22 +24,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Table View Controller-->
+        <!--Demo Table View Controller-->
         <scene sceneID="V3Y-fO-OpP">
             <objects>
-                <tableViewController id="7ar-Qt-mh1" sceneMemberID="viewController">
+                <tableViewController id="7ar-Qt-mh1" customClass="DemoTableViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="40" sectionFooterHeight="40" id="JXw-a6-Sey">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="100" id="IPm-y2-Vdh" customClass="TableCell" customModule="TableViewDemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DemoTableViewCell" rowHeight="100" id="IPm-y2-Vdh" customClass="TableCell" customModule="TableViewDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="40" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPm-y2-Vdh" id="api-yt-bkm">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPicture" translatesAutoresizingMaskIntoConstraints="NO" id="ti6-aI-69W">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ti6-aI-69W" secondAttribute="height" multiplier="1:1" id="8Oj-vp-N9R"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-5D-a86">
+                                            <rect key="frame" x="108" y="0.0" width="464" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Me9-yz-5j1"/>
+                                                <constraint firstAttribute="width" constant="42" id="pG4-Bu-jlf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="pG4-Bu-jlf"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
+                                            <rect key="frame" x="108" y="41" width="464" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="FxM-a0-UmT"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gmJ-5D-a86" secondAttribute="trailing" constant="20" id="2EJ-Hv-lHD"/>
+                                        <constraint firstItem="Jah-wO-AL4" firstAttribute="top" secondItem="gmJ-5D-a86" secondAttribute="top" constant="35" id="7Uf-fq-ZOE"/>
+                                        <constraint firstItem="gmJ-5D-a86" firstAttribute="top" secondItem="ti6-aI-69W" secondAttribute="top" id="Br7-aZ-KPE"/>
+                                        <constraint firstItem="ti6-aI-69W" firstAttribute="top" secondItem="api-yt-bkm" secondAttribute="top" id="Hed-Hy-wxs"/>
+                                        <constraint firstItem="Jah-wO-AL4" firstAttribute="leading" secondItem="gmJ-5D-a86" secondAttribute="leading" id="YgK-Jy-3uR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Jah-wO-AL4" secondAttribute="bottom" constant="10" id="gDJ-yh-HII"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Jah-wO-AL4" secondAttribute="trailing" constant="20" id="sJh-UJ-pOT"/>
+                                        <constraint firstItem="ti6-aI-69W" firstAttribute="leading" secondItem="api-yt-bkm" secondAttribute="leading" id="yfu-BT-Usl"/>
+                                        <constraint firstItem="gmJ-5D-a86" firstAttribute="leading" secondItem="ti6-aI-69W" secondAttribute="trailing" constant="8" id="zKb-Qj-uni"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="7Uf-fq-ZOE"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="ti6-aI-69W" firstAttribute="height" secondItem="IPm-y2-Vdh" secondAttribute="height" id="dEY-R9-kCg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="gmJ-5D-a86" id="aPA-yg-MSc"/>
+                                    <outlet property="photoImageView" destination="ti6-aI-69W" id="GAy-7O-BXT"/>
+                                    <outlet property="rateView" destination="Jah-wO-AL4" id="Z1B-cn-d9c"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -91,6 +147,13 @@
                                     <action selector="onSpaceTapped:" destination="pQW-ot-TJp" eventType="touchUpInside" id="sth-bX-CJg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-wI-lfV">
+                                <rect key="frame" x="236" y="347" width="52" height="30"/>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <action selector="onDismiss" destination="pQW-ot-TJp" eventType="touchUpInside" id="8cI-VD-sWm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -106,4 +169,7 @@
             <point key="canvasLocation" x="1176" y="1164"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPicture" width="100" height="100"/>
+    </resources>
 </document>

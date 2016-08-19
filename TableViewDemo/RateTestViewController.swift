@@ -27,4 +27,7 @@ class RateTestViewController: UIViewController {
 	@IBAction func onSpaceTapped(sender: UIButton) {
 		rateView.space += 1
 	}
+	@IBAction func onDismiss() {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 }
