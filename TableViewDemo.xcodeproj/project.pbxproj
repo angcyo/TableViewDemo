@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2514A2BA1D66DEB80007DE93 /* DetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2514A2B91D66DEB80007DE93 /* DetalViewController.swift */; };
 		25BED5F61D65FB3100D06F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED5F51D65FB3100D06F83 /* AppDelegate.swift */; };
 		25BED5F81D65FB3100D06F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BED5F71D65FB3100D06F83 /* ViewController.swift */; };
 		25BED5FB1D65FB3100D06F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25BED5F91D65FB3100D06F83 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2514A2B91D66DEB80007DE93 /* DetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalViewController.swift; sourceTree = "<group>"; };
 		25BED5F21D65FB3100D06F83 /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25BED5F51D65FB3100D06F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25BED5F71D65FB3100D06F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				25BED6071D66020900D06F83 /* TableCell.swift */,
 				25BED60B1D66093D00D06F83 /* RateView.swift */,
 				25BED5F91D65FB3100D06F83 /* Main.storyboard */,
+				2514A2B91D66DEB80007DE93 /* DetalViewController.swift */,
 				25BED60F1D6677DA00D06F83 /* DemoTableViewController.swift */,
 				25BED6111D6677F500D06F83 /* DataBean.swift */,
 				25BED60D1D66126900D06F83 /* RateTestViewController.swift */,
@@ -156,6 +159,7 @@
 				25BED60C1D66093D00D06F83 /* RateView.swift in Sources */,
 				25BED60E1D66126900D06F83 /* RateTestViewController.swift in Sources */,
 				25BED5F81D65FB3100D06F83 /* ViewController.swift in Sources */,
+				2514A2BA1D66DEB80007DE93 /* DetalViewController.swift in Sources */,
 				25BED5F61D65FB3100D06F83 /* AppDelegate.swift in Sources */,
 				25BED6101D6677DA00D06F83 /* DemoTableViewController.swift in Sources */,
 			);

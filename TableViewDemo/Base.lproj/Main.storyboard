@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -45,6 +46,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="525" y="349"/>
+        </scene>
+        <!--Detal View Controller-->
+        <scene sceneID="7fO-Bl-LXo">
+            <objects>
+                <viewController id="FJ8-ZQ-B8K" customClass="DetalViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xdu-rB-dLd"/>
+                        <viewControllerLayoutGuide type="bottom" id="yM1-Ih-ifm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ned-RO-6QW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="B1R-zL-onq">
+                                <rect key="frame" x="30" y="84" width="540" height="420"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPd-R2-5Y1">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fBG-be-Ecw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPicture" translatesAutoresizingMaskIntoConstraints="NO" id="4QH-bS-sTY">
+                                        <rect key="frame" x="0.0" y="50" width="540" height="320"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyd-ky-xPM" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="390" width="540" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="HO6-db-7eg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4QH-bS-sTY" firstAttribute="leading" secondItem="B1R-zL-onq" secondAttribute="leading" id="19B-La-NLe"/>
+                                    <constraint firstItem="TPd-R2-5Y1" firstAttribute="leading" secondItem="B1R-zL-onq" secondAttribute="leading" id="Ays-Tf-MFO"/>
+                                    <constraint firstItem="TPd-R2-5Y1" firstAttribute="top" secondItem="B1R-zL-onq" secondAttribute="top" id="L17-UZ-BQC"/>
+                                    <constraint firstAttribute="trailing" secondItem="TPd-R2-5Y1" secondAttribute="trailing" id="L7X-jK-FQr"/>
+                                    <constraint firstItem="gyd-ky-xPM" firstAttribute="leading" secondItem="B1R-zL-onq" secondAttribute="leading" id="OCv-XB-Zi5"/>
+                                    <constraint firstItem="TPd-R2-5Y1" firstAttribute="leading" secondItem="B1R-zL-onq" secondAttribute="leading" id="RRd-WQ-0Eg"/>
+                                    <constraint firstAttribute="trailing" secondItem="4QH-bS-sTY" secondAttribute="trailing" id="bYF-yh-Bvx"/>
+                                    <constraint firstAttribute="trailing" secondItem="TPd-R2-5Y1" secondAttribute="trailing" constant="151" id="hkb-E9-FhH"/>
+                                    <constraint firstAttribute="trailing" secondItem="gyd-ky-xPM" secondAttribute="trailing" id="mOn-cg-3cE"/>
+                                    <constraint firstAttribute="bottom" secondItem="gyd-ky-xPM" secondAttribute="bottom" id="yjA-EY-Svt"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RRd-WQ-0Eg"/>
+                                        <exclude reference="hkb-E9-FhH"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B1R-zL-onq" firstAttribute="top" secondItem="Xdu-rB-dLd" secondAttribute="bottom" constant="20" id="AUp-YV-lWd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B1R-zL-onq" secondAttribute="trailing" constant="10" id="dQI-gH-3k4"/>
+                            <constraint firstItem="B1R-zL-onq" firstAttribute="leading" secondItem="Ned-RO-6QW" secondAttribute="leadingMargin" constant="10" id="dcU-ov-14q"/>
+                            <constraint firstItem="B1R-zL-onq" firstAttribute="height" secondItem="Ned-RO-6QW" secondAttribute="height" multiplier="0.7" id="y8t-mN-95M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="TPd-R2-5Y1" id="fAp-Bb-UnW"/>
+                        <outlet property="photoView" destination="4QH-bS-sTY" id="moR-Vq-ah4"/>
+                        <outlet property="rateView" destination="gyd-ky-xPM" id="YVV-Wc-Ham"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Qf-IF-CcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="549"/>
         </scene>
         <!--TableTitle-->
         <scene sceneID="V3Y-fO-OpP">
@@ -125,7 +198,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TableTitle" id="JbF-sZ-LPF">
                         <barButtonItem key="backBarButtonItem" title="撤退" id="95h-M0-CD5"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdS-Ko-cbB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdS-Ko-cbB">
+                            <connections>
+                                <segue destination="FJ8-ZQ-B8K" kind="show" id="VoN-pV-UYu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0N-t8-wfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
