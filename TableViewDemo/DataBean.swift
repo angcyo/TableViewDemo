@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataBean {
+class DataBean: CustomStringConvertible {
 	var image: UIImage?
 	var name: String
 	var rate: Int
@@ -16,5 +16,9 @@ class DataBean {
 		self.image = image
 		self.rate = rate
 		self.name = name
+	}
+
+	var description: String {
+		return "image:\(image) name:\(name) rate:\(rate)"
 	}
 }

@@ -52,6 +52,16 @@ class DemoTableViewController: UITableViewController {
 		cell.rateView.rating = bean.rate
 		return cell
 	}
+
+	// MARK: 从详细页面返回
+	@IBAction func unwindSegueFromDetal(sender: UIStoryboardSegue) {
+		if let detalViewController = sender.sourceViewController as? DetalViewController, dataBean = detalViewController.dataBean {
+			let indexPath = NSIndexPath(forRow: datas.count, inSection: 0)
+			// datas += [dataBean]
+			datas.append(dataBean)
+			self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
+		}
+	}
 }
 
 //MARK: 数据操作
@@ -70,5 +80,6 @@ extension DemoTableViewController {
 		let bean9 = DataBean(name: "name8", rate: 3, image: UIImage(named: "xiaoxinkutou"))
 
 		datas += [bean2, bean3, bean4, bean5, bean6, bean7, bean8, bean9]
+//		datas.append(bean2)
 	}
 }

@@ -110,16 +110,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新建" id="1aA-8U-dPq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1ec-3w-Q6C"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="u8p-HD-55R"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1ec-3w-Q6C">
+                            <connections>
+                                <action selector="onCancelTapped:" destination="FJ8-ZQ-B8K" id="JgO-Ko-Tm4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="u8p-HD-55R">
+                            <connections>
+                                <segue destination="rvw-zx-uYq" kind="unwind" unwindAction="unwindSegueFromDetal:" id="Jxl-km-EE6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="TPd-R2-5Y1" id="fAp-Bb-UnW"/>
                         <outlet property="photoView" destination="4QH-bS-sTY" id="moR-Vq-ah4"/>
                         <outlet property="rateView" destination="gyd-ky-xPM" id="YVV-Wc-Ham"/>
+                        <outlet property="saveButtonItem" destination="u8p-HD-55R" id="l4l-DJ-2TH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qf-IF-CcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rvw-zx-uYq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2707" y="460"/>
         </scene>
