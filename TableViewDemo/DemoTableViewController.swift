@@ -21,7 +21,7 @@ class DemoTableViewController: UITableViewController {
 		tableView.separatorStyle = .SingleLine
 		tableView.indicatorStyle = .Black // 滚动条的样式(黑色/白色)
 
-		tableView.allowsSelection = false // 不允许选中
+		// tableView.allowsSelection = false // 不允许选中
 	}
 
 	// MARK: table 中有多少个分组

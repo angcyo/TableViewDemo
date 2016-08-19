@@ -131,7 +131,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qf-IF-CcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="rvw-zx-uYq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2707" y="460"/>
+            <point key="canvasLocation" x="2619" y="1164"/>
         </scene>
         <!--TableTitle-->
         <scene sceneID="V3Y-fO-OpP">
@@ -142,11 +142,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DemoTableViewCell" rowHeight="100" id="IPm-y2-Vdh" customClass="TableCell" customModule="TableViewDemo" customModuleProvider="target">
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DemoTableViewCell" rowHeight="100" id="IPm-y2-Vdh" customClass="TableCell" customModule="TableViewDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="104" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPm-y2-Vdh" id="api-yt-bkm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPicture" translatesAutoresizingMaskIntoConstraints="NO" id="ti6-aI-69W">
@@ -155,14 +155,14 @@
                                                 <constraint firstAttribute="width" secondItem="ti6-aI-69W" secondAttribute="height" multiplier="1:1" id="8Oj-vp-N9R"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
                                             <rect key="frame" x="108" y="47" width="464" height="30"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="FxM-a0-UmT"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-5D-a86">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-5D-a86">
                                             <rect key="frame" x="108" y="15" width="464" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Me9-yz-5j1"/>
@@ -202,6 +202,7 @@
                                     <outlet property="nameLabel" destination="gmJ-5D-a86" id="aPA-yg-MSc"/>
                                     <outlet property="photoImageView" destination="ti6-aI-69W" id="GAy-7O-BXT"/>
                                     <outlet property="rateView" destination="Jah-wO-AL4" id="Z1B-cn-d9c"/>
+                                    <segue destination="FJ8-ZQ-B8K" kind="push" identifier="CellSegue" id="Urf-Ld-gd0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -214,14 +215,14 @@
                         <barButtonItem key="backBarButtonItem" title="撤退" id="95h-M0-CD5"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdS-Ko-cbB">
                             <connections>
-                                <segue destination="Ia7-2e-sAf" kind="presentation" id="VoN-pV-UYu"/>
+                                <segue destination="Ia7-2e-sAf" kind="presentation" identifier="AddItemSegue" id="VoN-pV-UYu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0N-t8-wfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="1164"/>
+            <point key="canvasLocation" x="1190" y="1164"/>
         </scene>
         <!--Rate Test View Controller-->
         <scene sceneID="74t-j9-qFZ">
@@ -283,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjX-RE-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="1164"/>
+            <point key="canvasLocation" x="1153" y="340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zv1-iC-dSH">
@@ -319,10 +320,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJ8-oq-f4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="460"/>
+            <point key="canvasLocation" x="1908" y="1652"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPicture" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Urf-Ld-gd0"/>
+    </inferredMetricsTieBreakers>
 </document>

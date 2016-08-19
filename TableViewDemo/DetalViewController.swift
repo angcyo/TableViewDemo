@@ -110,12 +110,7 @@ extension DetalViewController: UITextFieldDelegate {
 
 		let text = textField.text ?? ""
 		if !text.isEmpty {
-			navigationItem.title = text
-
-			if let titleView = navigationItem.titleView as? UILabel {
-				titleView.text = text
-				titleView.sizeToFit()
-			}
+			self.navigationItem.setNavigationTitle(text)
 		}
 	}
 
