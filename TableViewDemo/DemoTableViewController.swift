@@ -13,7 +13,14 @@ class DemoTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		loadSampleData()
+		view.backgroundColor = UIColor.redColor()
+		tableView.backgroundColor = UIColor.blueColor()
 
+		// tableView.separatorStyle = .None //取消分割线
+		tableView.separatorStyle = .SingleLineEtched
+		tableView.indicatorStyle = .White // 滚动条的样式(黑色/白色)
+
+		tableView.allowsSelection = false // 不允许选中
 	}
 
 	// MARK: table 中有多少个分组
@@ -31,7 +38,13 @@ class DemoTableViewController: UITableViewController {
 		let cellIdentifier = "DemoTableViewCell"
 		// MARK: 从缓存中获取一个cell
 		let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TableCell
+		// cell.contentView.backgroundColor = UIColor.clearColor()
 
+		cell.backgroundColor = UIColor.clearColor() // 透明
+		cell.contentView.backgroundColor = UIColor.clearColor() // 透明
+
+		cell.contentView.backgroundColor = UIColor(white: 0, alpha: 0)
+		// cell.contentView.alpha = 0
 		let bean = datas[indexPath.row]
 		cell.nameLabel.text = bean.name
 		cell.photoImageView.image = bean.image
