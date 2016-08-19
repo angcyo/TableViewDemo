@@ -28,6 +28,7 @@ class DetalViewController: UIViewController {
 		// self.navigationController?.navigationBar.barTintColor = UIColor.blackColor() // 导航栏的背景颜色
 
 		nameField.delegate = self
+		addTextFieldChangedListener(nameField)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -56,6 +57,22 @@ class DetalViewController: UIViewController {
 
 //MARK: 扩展键盘隐藏
 extension DetalViewController: UITextFieldDelegate {
+
+	func addTextFieldChangedListener(textField: UITextField) {
+		textField.addTarget(self, action: #selector(onValueChanged(_:)), forControlEvents: .ValueChanged)
+		textField.addTarget(self, action: #selector(onEdittingChanged(_:)), forControlEvents: .EditingChanged)
+	}
+
+	func onValueChanged(sender: UITextField) {
+		print("onValueChanged \(sender.text)")
+	}
+
+	// MARK: 当文本框编辑完成后
+	func onEdittingChanged(sender: UITextField) {
+		print("onEdittingChanged \(sender.text)")
+		let text = sender.text ?? ""
+		saveButtonItem.enabled = !text.isEmpty
+	}
 
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
 		// MARK:键盘按return之后

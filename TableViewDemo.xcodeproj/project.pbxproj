@@ -36,6 +36,8 @@
 		25BED60D1D66126900D06F83 /* RateTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTestViewController.swift; sourceTree = "<group>"; };
 		25BED60F1D6677DA00D06F83 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 		25BED6111D6677F500D06F83 /* DataBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBean.swift; sourceTree = "<group>"; };
+		25BED6131D67472C00D06F83 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		25BED6141D67472C00D06F83 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				25BED5FA1D65FB3100D06F83 /* Base */,
+				25BED6131D67472C00D06F83 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				25BED5FF1D65FB3100D06F83 /* Base */,
+				25BED6141D67472C00D06F83 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

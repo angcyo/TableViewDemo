@@ -1,0 +1,30 @@
+
+/* Class = "UINavigationItem"; title = "新建"; ObjectID = "1aA-8U-dPq"; */
+"1aA-8U-dPq.title" = "新建";
+
+/* Class = "UIButton"; normalTitle = "space"; ObjectID = "2Be-B8-R5r"; */
+"2Be-B8-R5r.normalTitle" = "space";
+
+/* Class = "UIButton"; normalTitle = "rate"; ObjectID = "6hj-jN-N9c"; */
+"6hj-jN-N9c.normalTitle" = "rate";
+
+/* Class = "UIBarButtonItem"; title = "撤退"; ObjectID = "95h-M0-CD5"; */
+"95h-M0-CD5.title" = "撤退";
+
+/* Class = "UINavigationItem"; title = "TableTitle"; ObjectID = "JbF-sZ-LPF"; */
+"JbF-sZ-LPF.title" = "TableTitle";
+
+/* Class = "UITextField"; placeholder = "name"; ObjectID = "TPd-R2-5Y1"; */
+"TPd-R2-5Y1.placeholder" = "name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bJS-sj-MEK"; */
+"bJS-sj-MEK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "dismiss"; ObjectID = "fcg-wI-lfV"; */
+"fcg-wI-lfV.normalTitle" = "dismiss";
+
+/* Class = "UIButton"; normalTitle = "rating"; ObjectID = "iIG-LW-U7g"; */
+"iIG-LW-U7g.normalTitle" = "rating";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xaB-4T-kul"; */
+"xaB-4T-kul.text" = "Label";
