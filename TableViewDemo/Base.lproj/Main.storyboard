@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ar-Qt-mh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I4v-5C-kO3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -46,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="525" y="349"/>
         </scene>
-        <!--Demo Table View Controller-->
+        <!--TableTitle-->
         <scene sceneID="V3Y-fO-OpP">
             <objects>
                 <tableViewController id="7ar-Qt-mh1" customClass="DemoTableViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DemoTableViewCell" rowHeight="100" id="IPm-y2-Vdh" customClass="TableCell" customModule="TableViewDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="40" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="104" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPm-y2-Vdh" id="api-yt-bkm">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
@@ -83,8 +83,8 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
-                                            <rect key="frame" x="108" y="41" width="464" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
+                                            <rect key="frame" x="108" y="42" width="464" height="40"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="FxM-a0-UmT"/>
@@ -123,10 +123,14 @@
                             <outlet property="delegate" destination="7ar-Qt-mh1" id="pfI-vU-fMF"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="TableTitle" id="JbF-sZ-LPF">
+                        <barButtonItem key="backBarButtonItem" title="撤退" id="95h-M0-CD5"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdS-Ko-cbB"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0N-t8-wfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="1164"/>
+            <point key="canvasLocation" x="1312" y="1164"/>
         </scene>
         <!--Rate Test View Controller-->
         <scene sceneID="74t-j9-qFZ">
@@ -188,7 +192,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjX-RE-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="1164"/>
+            <point key="canvasLocation" x="1988" y="1164"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zv1-iC-dSH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I4v-5C-kO3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NW1-lz-bbl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ar-Qt-mh1" kind="relationship" relationship="rootViewController" id="ebd-I4-ue0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njd-8e-Iwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="1164"/>
         </scene>
     </scenes>
     <resources>
