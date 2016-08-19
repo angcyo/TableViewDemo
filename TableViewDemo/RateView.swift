@@ -10,6 +10,9 @@ import UIKit
 
 class RateView: UIView {
 
+	// MARK: 星星改变后的回调方法
+	var onRatingChange: ((Int) -> Void)?
+
 	// MARK: 星星之间的间距
 	var space = 5 {
 		didSet {
@@ -110,6 +113,11 @@ extension RateView {
 	func onButtonTapped(sender: UIButton) {
 		rating = ratingButton.indexOf(sender)! + 1
 		updateSelectionStates()
+
+		// MARK:选中星星改变后, 调用回调方法
+		if let method = onRatingChange {
+			method(rating)
+		}
 	}
 }
 

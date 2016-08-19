@@ -52,6 +52,13 @@ class DemoTableViewController: UITableViewController {
 		cell.nameLabel.text = bean.name
 		cell.photoImageView.image = bean.image
 		cell.rateView.rating = bean.rate
+
+		// MARK:添加星星改变的回调方法
+		cell.rateView.onRatingChange = { rating in
+			self.datas[indexPath.row].rate = rating
+			print("row:\(indexPath.row) rate:\(rating)  --:\(bean.rate)")
+		}
+
 		return cell
 	}
 
@@ -61,7 +68,7 @@ class DemoTableViewController: UITableViewController {
 
 			if let selectorIndexPath = tableView.indexPathForSelectedRow {
 				datas[selectorIndexPath.row] = dataBean
-				tableView.reloadRowsAtIndexPaths([selectorIndexPath], withRowAnimation: .Left)
+				tableView.reloadRowsAtIndexPaths([selectorIndexPath], withRowAnimation: .Top)
 			} else {
 				let indexPath = NSIndexPath(forRow: datas.count, inSection: 0)
 				// datas += [dataBean]
@@ -107,13 +114,13 @@ extension DemoTableViewController {
 		// MARK: 2x
 		let bean2 = DataBean(name: "name1", rate: 0, image: UIImage(named: "bochan"))
 		let bean3 = DataBean(name: "name2", rate: 1, image: UIImage(named: "himawari"))
-		let bean4 = DataBean(name: "name3", rate: 3, image: UIImage(named: "kazama"))
-		let bean5 = DataBean(name: "name4", rate: 2, image: UIImage(named: "masao"))
+		let bean4 = DataBean(name: "name3", rate: 2, image: UIImage(named: "kazama"))
+		let bean5 = DataBean(name: "name4", rate: 3, image: UIImage(named: "masao"))
 		// MARK: 1x
 		let bean6 = DataBean(name: "name5", rate: 4, image: UIImage(named: "nene"))
-		let bean7 = DataBean(name: "name6", rate: 5, image: UIImage(named: "shin"))
-		let bean8 = DataBean(name: "name7", rate: 4, image: UIImage(named: "xiaoxin"))
-		let bean9 = DataBean(name: "name8", rate: 3, image: UIImage(named: "xiaoxinkutou"))
+		let bean7 = DataBean(name: "name6", rate: 4, image: UIImage(named: "shin"))
+		let bean8 = DataBean(name: "name7", rate: 5, image: UIImage(named: "xiaoxin"))
+		let bean9 = DataBean(name: "name8", rate: 5, image: UIImage(named: "xiaoxinkutou"))
 
 		datas += [bean2, bean3, bean4, bean5, bean6, bean7, bean8, bean9]
 //		datas.append(bean2)
