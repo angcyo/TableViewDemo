@@ -35,11 +35,13 @@ class RateView: UIView {
 	}
 	var ratingButton = [UIButton]()
 
+	// MARK: 必须实现的构造方法
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		initButton()
 	}
 
+	// MARK: 控制子View的位置
 	override func layoutSubviews() {
 		print("layoutSubViews")
 		let size = Int(self.frame.size.height)
@@ -53,6 +55,8 @@ class RateView: UIView {
 }
 
 extension RateView {
+
+	// MARK: 初始化星星button
 	func initButton() {
 		for (_, button) in ratingButton.enumerate() {
 			button.removeFromSuperview()
@@ -82,6 +86,7 @@ extension RateView {
 		}
 	}
 
+	// MARK: 添加按钮
 	func addButton() {
 		let button = UIButton()
 		button.adjustsImageWhenHighlighted = false
@@ -94,14 +99,20 @@ extension RateView {
 		self.addSubview(button)
 	}
 
+	// MARK:更新选中的星星状态图片
 	func updateSelectionStates() {
 		for (index, button) in ratingButton.enumerate() {
 			button.selected = index < rating
 		}
 	}
 
+	// MARK: 星星点击的时候
 	func onButtonTapped(sender: UIButton) {
 		rating = ratingButton.indexOf(sender)! + 1
 		updateSelectionStates()
 	}
+}
+
+@objc protocol RatingChangeDelegate {
+	optional func onRatingChange(rating: Int)
 }

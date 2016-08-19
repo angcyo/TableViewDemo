@@ -202,7 +202,7 @@
                                     <outlet property="nameLabel" destination="gmJ-5D-a86" id="aPA-yg-MSc"/>
                                     <outlet property="photoImageView" destination="ti6-aI-69W" id="GAy-7O-BXT"/>
                                     <outlet property="rateView" destination="Jah-wO-AL4" id="Z1B-cn-d9c"/>
-                                    <segue destination="FJ8-ZQ-B8K" kind="push" identifier="CellSegue" id="Urf-Ld-gd0"/>
+                                    <segue destination="FJ8-ZQ-B8K" kind="show" identifier="CellSegue" id="Urf-Ld-gd0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
