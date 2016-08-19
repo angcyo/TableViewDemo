@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="525" y="349"/>
         </scene>
-        <!--Detal View Controller-->
+        <!--新建-->
         <scene sceneID="7fO-Bl-LXo">
             <objects>
                 <viewController id="FJ8-ZQ-B8K" customClass="DetalViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,6 +109,10 @@
                             <constraint firstItem="B1R-zL-onq" firstAttribute="height" secondItem="Ned-RO-6QW" secondAttribute="height" multiplier="0.7" id="y8t-mN-95M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="新建" id="1aA-8U-dPq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1ec-3w-Q6C"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="u8p-HD-55R"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="TPd-R2-5Y1" id="fAp-Bb-UnW"/>
                         <outlet property="photoView" destination="4QH-bS-sTY" id="moR-Vq-ah4"/>
@@ -117,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qf-IF-CcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="549"/>
+            <point key="canvasLocation" x="2707" y="460"/>
         </scene>
         <!--TableTitle-->
         <scene sceneID="V3Y-fO-OpP">
@@ -141,13 +145,20 @@
                                                 <constraint firstAttribute="width" secondItem="ti6-aI-69W" secondAttribute="height" multiplier="1:1" id="8Oj-vp-N9R"/>
                                             </constraints>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
+                                            <rect key="frame" x="108" y="47" width="464" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="FxM-a0-UmT"/>
+                                            </constraints>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-5D-a86">
-                                            <rect key="frame" x="108" y="0.0" width="464" height="21"/>
+                                            <rect key="frame" x="108" y="15" width="464" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Me9-yz-5j1"/>
                                                 <constraint firstAttribute="width" constant="42" id="pG4-Bu-jlf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -156,22 +167,15 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-wO-AL4" customClass="RateView" customModule="TableViewDemo" customModuleProvider="target">
-                                            <rect key="frame" x="108" y="42" width="464" height="40"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="FxM-a0-UmT"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="gmJ-5D-a86" secondAttribute="trailing" constant="20" id="2EJ-Hv-lHD"/>
                                         <constraint firstItem="Jah-wO-AL4" firstAttribute="top" secondItem="gmJ-5D-a86" secondAttribute="top" constant="35" id="7Uf-fq-ZOE"/>
-                                        <constraint firstItem="gmJ-5D-a86" firstAttribute="top" secondItem="ti6-aI-69W" secondAttribute="top" id="Br7-aZ-KPE"/>
                                         <constraint firstItem="ti6-aI-69W" firstAttribute="top" secondItem="api-yt-bkm" secondAttribute="top" id="Hed-Hy-wxs"/>
                                         <constraint firstItem="Jah-wO-AL4" firstAttribute="leading" secondItem="gmJ-5D-a86" secondAttribute="leading" id="YgK-Jy-3uR"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Jah-wO-AL4" secondAttribute="bottom" constant="10" id="gDJ-yh-HII"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Jah-wO-AL4" secondAttribute="bottom" constant="15" id="gDJ-yh-HII"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Jah-wO-AL4" secondAttribute="trailing" constant="20" id="sJh-UJ-pOT"/>
+                                        <constraint firstItem="gmJ-5D-a86" firstAttribute="top" secondItem="ti6-aI-69W" secondAttribute="top" constant="15" id="xWr-Ff-tUX"/>
                                         <constraint firstItem="ti6-aI-69W" firstAttribute="leading" secondItem="api-yt-bkm" secondAttribute="leading" id="yfu-BT-Usl"/>
                                         <constraint firstItem="gmJ-5D-a86" firstAttribute="leading" secondItem="ti6-aI-69W" secondAttribute="trailing" constant="8" id="zKb-Qj-uni"/>
                                     </constraints>
@@ -200,7 +204,7 @@
                         <barButtonItem key="backBarButtonItem" title="撤退" id="95h-M0-CD5"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZdS-Ko-cbB">
                             <connections>
-                                <segue destination="FJ8-ZQ-B8K" kind="show" id="VoN-pV-UYu"/>
+                                <segue destination="Ia7-2e-sAf" kind="presentation" id="VoN-pV-UYu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -288,6 +292,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njd-8e-Iwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="500" y="1164"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TnY-bP-oRW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ia7-2e-sAf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hZx-Ml-HaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FJ8-ZQ-B8K" kind="relationship" relationship="rootViewController" id="0pp-2m-6vU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJ8-oq-f4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895" y="460"/>
         </scene>
     </scenes>
     <resources>

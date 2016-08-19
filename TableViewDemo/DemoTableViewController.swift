@@ -13,12 +13,13 @@ class DemoTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		loadSampleData()
-		view.backgroundColor = UIColor.redColor()
-		tableView.backgroundColor = UIColor.blueColor()
+		// view.backgroundColor = UIColor.redColor()
+		// tableView.backgroundColor = UIColor.init(colorLiteralRed: 0.2, green: 0.2, blue: 0.2, alpha: 0.2)
+		tableView.backgroundColor = UIColor.init(white: 0.9, alpha: 0.9)
 
 		// tableView.separatorStyle = .None //取消分割线
-		tableView.separatorStyle = .SingleLineEtched
-		tableView.indicatorStyle = .White // 滚动条的样式(黑色/白色)
+		tableView.separatorStyle = .SingleLine
+		tableView.indicatorStyle = .Black // 滚动条的样式(黑色/白色)
 
 		tableView.allowsSelection = false // 不允许选中
 	}
