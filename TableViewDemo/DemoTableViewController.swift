@@ -56,10 +56,28 @@ class DemoTableViewController: UITableViewController {
 	// MARK: 从详细页面返回
 	@IBAction func unwindSegueFromDetal(sender: UIStoryboardSegue) {
 		if let detalViewController = sender.sourceViewController as? DetalViewController, dataBean = detalViewController.dataBean {
-			let indexPath = NSIndexPath(forRow: datas.count, inSection: 0)
-			// datas += [dataBean]
-			datas.append(dataBean)
-			self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
+
+			if let selectorIndexPath = tableView.indexPathForSelectedRow {
+				datas[selectorIndexPath.row] = dataBean
+				tableView.reloadRowsAtIndexPaths([selectorIndexPath], withRowAnimation: .Left)
+			} else {
+				let indexPath = NSIndexPath(forRow: datas.count, inSection: 0)
+				// datas += [dataBean]
+				datas.append(dataBean)
+				self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+			}
+
+		}
+	}
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		print("prepareForSegue \(segue.identifier)")
+		if segue.identifier == "AddItemSegue" {
+
+		} else if segue.identifier == "CellSegue" {
+			if let detalVC = segue.destinationViewController as? DetalViewController, cell = sender as? TableCell {
+				detalVC.dataBean = datas[tableView.indexPathForCell(cell)!.row]
+			}
 		}
 	}
 }

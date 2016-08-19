@@ -29,6 +29,17 @@ class DetalViewController: UIViewController {
 
 		nameField.delegate = self
 		addTextFieldChangedListener(nameField)
+
+		// MARK: 根据传递过来的参数, 初始化views
+		if let dataBean = dataBean {
+			nameField.text = dataBean.name
+			rateView.rating = dataBean.rate
+			photoView.image = dataBean.image
+			photoView.contentMode = .ScaleToFill
+			navigationItem.setNavigationTitle(dataBean.name)
+		}
+
+		checkValidName()
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -44,7 +55,13 @@ class DetalViewController: UIViewController {
 
 	// MARK: 🔙返回
 	@IBAction func onCancelTapped(sender: UIBarButtonItem) {
-		dismissViewControllerAnimated(true, completion: nil)
+		// MARK: 有点迷糊...为啥这样判断可以?  解答: 通过Push方式显示的ViewController presentingViewController变量一定等于nil
+		let isAddItemMode = presentingViewController is UINavigationController
+		if isAddItemMode {
+			dismissViewControllerAnimated(true, completion: nil)
+		} else {
+			navigationController?.popViewControllerAnimated(true)
+		}
 	}
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -70,8 +87,7 @@ extension DetalViewController: UITextFieldDelegate {
 	// MARK: 当文本框编辑完成后
 	func onEdittingChanged(sender: UITextField) {
 		print("onEdittingChanged \(sender.text)")
-		let text = sender.text ?? ""
-		saveButtonItem.enabled = !text.isEmpty
+		checkValidName()
 	}
 
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
