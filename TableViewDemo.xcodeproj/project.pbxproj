@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		250D9FE61D681A770095AEDC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		250D9FE61D681A770095AEDC /* FileManager.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FileManager.playground; sourceTree = "<group>"; };
 		2514A2B91D66DEB80007DE93 /* DetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalViewController.swift; sourceTree = "<group>"; };
 		2514A2BB1D66E57A0007DE93 /* BaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseExtension.swift; sourceTree = "<group>"; };
 		25BED5F21D65FB3100D06F83 /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +55,7 @@
 		25BED5E91D65FB3100D06F83 = {
 			isa = PBXGroup;
 			children = (
-				250D9FE61D681A770095AEDC /* MyPlayground.playground */,
+				250D9FE61D681A770095AEDC /* FileManager.playground */,
 				25BED5F41D65FB3100D06F83 /* TableViewDemo */,
 				25BED5F31D65FB3100D06F83 /* Products */,
 			);

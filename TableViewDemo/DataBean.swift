@@ -9,6 +9,18 @@
 import UIKit
 
 class DataBean: NSObject, NSCoding {
+
+	// MARK: 如果文件夹不存在则, 创建
+	private static var DocumentDirectory: NSURL {
+		let fileManager = NSFileManager.defaultManager()
+		let docPath = fileManager.URLsForDirectory(.DocumentationDirectory, inDomains: .UserDomainMask).first!
+		if !fileManager.fileExistsAtPath(docPath.path!) {
+			try! fileManager.createDirectoryAtPath(docPath.path!, withIntermediateDirectories: true, attributes: nil)
+		}
+		return docPath
+	}
+	static let DataPathUrl = DocumentDirectory.URLByAppendingPathComponent("data_bean_s")
+
 	var image: UIImage?
 	var name: String
 	var rate: Int

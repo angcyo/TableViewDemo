@@ -12,7 +12,14 @@ class DemoTableViewController: UITableViewController {
 	var datas = [DataBean]()
 
 	override func viewDidLoad() {
-		loadSampleData()
+
+		// MARK: 如果文件中有数据, 就读取文件数据, 否则读取demo数据
+		if let beans = loadDataFromFile() {
+			datas += beans
+		} else {
+			loadSampleData()
+		}
+
 		// view.backgroundColor = UIColor.redColor()
 		// tableView.backgroundColor = UIColor.init(colorLiteralRed: 0.2, green: 0.2, blue: 0.2, alpha: 0.2)
 		tableView.backgroundColor = UIColor.init(white: 0.9, alpha: 0.9)
@@ -57,6 +64,7 @@ class DemoTableViewController: UITableViewController {
 		cell.rateView.onRatingChange = { rating in
 			self.datas[indexPath.row].rate = rating
 			print("row:\(indexPath.row) rate:\(rating)  --:\(bean.rate)")
+			self.saveDataToFile()
 		}
 
 		return cell
@@ -76,6 +84,7 @@ class DemoTableViewController: UITableViewController {
 				self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .None)
 			}
 
+			saveDataToFile()
 		}
 	}
 
@@ -85,6 +94,8 @@ class DemoTableViewController: UITableViewController {
 			// 删除
 			datas.removeAtIndex(indexPath.row)
 			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+
+			saveDataToFile()
 		} else if editingStyle == .Insert {
 			// 插入
 		}
@@ -112,17 +123,36 @@ extension DemoTableViewController {
 	func loadSampleData() {
 
 		// MARK: 2x
-		let bean2 = DataBean(name: "name1", rate: 0, image: UIImage(named: "bochan"))
-		let bean3 = DataBean(name: "name2", rate: 1, image: UIImage(named: "himawari"))
-		let bean4 = DataBean(name: "name3", rate: 2, image: UIImage(named: "kazama"))
-		let bean5 = DataBean(name: "name4", rate: 3, image: UIImage(named: "masao"))
+		let bean2 = DataBean(name: "name1", rate: 0, image: UIImage(named: "bochan"))!
+		let bean3 = DataBean(name: "name2", rate: 1, image: UIImage(named: "himawari"))!
+		let bean4 = DataBean(name: "name3", rate: 2, image: UIImage(named: "kazama"))!
+		let bean5 = DataBean(name: "name4", rate: 3, image: UIImage(named: "masao"))!
 		// MARK: 1x
-		let bean6 = DataBean(name: "name5", rate: 4, image: UIImage(named: "nene"))
-		let bean7 = DataBean(name: "name6", rate: 4, image: UIImage(named: "shin"))
-		let bean8 = DataBean(name: "name7", rate: 5, image: UIImage(named: "xiaoxin"))
-		let bean9 = DataBean(name: "name8", rate: 5, image: UIImage(named: "xiaoxinkutou"))
+		let bean6 = DataBean(name: "name5", rate: 4, image: UIImage(named: "nene"))!
+		let bean7 = DataBean(name: "name6", rate: 4, image: UIImage(named: "shin"))!
+		let bean8 = DataBean(name: "name7", rate: 5, image: UIImage(named: "xiaoxin"))!
+		let bean9 = DataBean(name: "name8", rate: 5, image: UIImage(named: "xiaoxinkutou"))!
 
 		datas += [bean2, bean3, bean4, bean5, bean6, bean7, bean8, bean9]
 //		datas.append(bean2)
+	}
+}
+
+//MARK: 保存数据到文件
+extension DemoTableViewController {
+
+	// MARK: 保存
+	func saveDataToFile() {
+		let isSuccessSave = NSKeyedArchiver.archiveRootObject(datas, toFile: DataBean.DataPathUrl.path!)
+		if isSuccessSave {
+			print("数据保存成功:\(DataBean.DataPathUrl.path!)")
+		} else {
+			print("数据保存失败:\(DataBean.DataPathUrl.path!)")
+		}
+	}
+
+	// MARK: 读取
+	func loadDataFromFile() -> [DataBean]? {
+		return NSKeyedUnarchiver.unarchiveObjectWithFile(DataBean.DataPathUrl.path!) as? [DataBean]
 	}
 }

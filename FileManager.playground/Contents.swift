@@ -41,7 +41,13 @@ let docDirectory = fManager.URLsForDirectory(.DocumentationDirectory, inDomains:
 
 let ArchiveURL = docDirectory.URLByAppendingPathComponent("datas")
 
+ArchiveURL.path
+ArchiveURL.absoluteString
+ArchiveURL.absoluteURL
+ArchiveURL.baseURL
+ArchiveURL.filePathURL
 
+fManager.URLsForDirectory(.LibraryDirectory, inDomains: .AllDomainsMask)
 
-
+fManager.URLsForDirectory(.AllLibrariesDirectory, inDomains: .AllDomainsMask)
 
